@@ -1,7 +1,4 @@
-# ===== README.md =====
-# Short README (copy to README.md)
 
-"""
 Financial RAG Q&A with Agent Capabilities
 =========================================
 
@@ -29,5 +26,3 @@ Design decisions (brief)
 - Chunking: sliding window by token approx (using simple word-based heuristics)
 - Vector store: FAISS in-memory for simplicity
 - Agent: function-based decomposition with patterns for comparative queries
-
-"""
