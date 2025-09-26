@@ -1,0 +1,8 @@
+langchain==0.2.12
+langchain-community==0.2.7
+transformers==4.42.4
+sentence-transformers==2.7.0
+faiss-cpu==1.8.0
+pypdf==4.2.0
+beautifulsoup4==4.12.3
+requests==2.32.3

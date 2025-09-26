@@ -1,0 +1,14 @@
+setup.py
+src/rag_financial_qna/__init__.py
+src/rag_financial_qna/downloader.py
+src/rag_financial_qna/embed_store.py
+src/rag_financial_qna/main.py
+src/rag_financial_qna/preprocess.py
+src/rag_financial_qna/query.py
+src/rag_financial_qna/rag_pipeline.py
+src/rag_financial_qna/utils.py
+src/rag_financial_qna.egg-info/PKG-INFO
+src/rag_financial_qna.egg-info/SOURCES.txt
+src/rag_financial_qna.egg-info/dependency_links.txt
+src/rag_financial_qna.egg-info/requires.txt
+src/rag_financial_qna.egg-info/top_level.txt

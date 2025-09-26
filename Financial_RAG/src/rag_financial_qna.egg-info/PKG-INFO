@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: rag-financial-qna
+Version: 0.1.0
+Summary: RAG pipeline for financial Q&A using SEC 10-K filings
+Home-page: https://github.com/yourusername/rag-financial-qna
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Requires-Dist: langchain==0.2.12
+Requires-Dist: langchain-community==0.2.7
+Requires-Dist: transformers==4.42.4
+Requires-Dist: sentence-transformers==2.7.0
+Requires-Dist: faiss-cpu==1.8.0
+Requires-Dist: pypdf==4.2.0
+Requires-Dist: beautifulsoup4==4.12.3
+Requires-Dist: requests==2.32.3
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
