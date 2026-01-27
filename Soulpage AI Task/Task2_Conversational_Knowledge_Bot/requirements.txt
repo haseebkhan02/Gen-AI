@@ -1,0 +1,11 @@
+streamlit>=1.31.0
+langchain>=0.2.10
+langchain-core>=0.2.22
+langchain-community>=0.2.9
+langchain-groq>=0.1.9
+langgraph>=0.0.40
+duckduckgo-search>=5.0.0
+requests>=2.31.0
+wikipedia
+arxiv
+ddgs
