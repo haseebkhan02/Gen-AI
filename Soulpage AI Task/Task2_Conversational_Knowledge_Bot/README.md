@@ -151,17 +151,6 @@ streamlit run app.py
 
 ---
 
-## 🚀 Future Improvements
-
-* 📄 PDF / document upload
-* 🔎 Citation-aware responses
-* 🧵 Persistent memory across sessions
-* ⚡ Streaming responses
-* 🧠 Tool confidence scoring
-* 🖼️ Multimodal inputs
-
----
-
 ## 🧩 Key Concepts Demonstrated
 
 * LangGraph State Machines
