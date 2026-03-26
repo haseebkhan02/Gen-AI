@@ -1,0 +1,11 @@
+streamlit
+langgraph
+langchain
+langchain-core
+langchain-groq
+beautifulsoup4
+requests
+numpy
+pandas
+tiktoken
+graphviz
