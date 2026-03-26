@@ -222,12 +222,12 @@ Recommendation: Accept
 
 ---
 
-## 🚀 Future Improvements
+##  Future Improvements
 
-* 🌐 Real-time fact-check APIs
-* ⚡ Parallel agent execution
-* 🧠 RAG-based evaluation
-* 📊 Paper comparison dashboard
+*  Real-time fact-check APIs
+*  Parallel agent execution
+*  RAG-based evaluation
+*  Paper comparison dashboard
 
 ---
 
