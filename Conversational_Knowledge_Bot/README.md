@@ -2,6 +2,7 @@
 
 A **multi-tool conversational AI assistant** built using **LangGraph**, **Groq LLM**, and **Streamlit**.
 The bot intelligently routes user queries to **Wikipedia**, **ArXiv**, or **Web Search (DuckDuckGo)** based on the nature of the question, while maintaining full conversational context.
+deployed at https://conversationalknowledgebot.streamlit.app/
 
 ---
 
