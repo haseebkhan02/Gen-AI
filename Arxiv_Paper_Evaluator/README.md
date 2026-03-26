@@ -232,7 +232,7 @@ Recommendation: Accept
 ---
 
 ##  Demo
-Will update the link soon 
+Check the demo here : https://arxivpaperevaluator.streamlit.app/
 
 ---
 
