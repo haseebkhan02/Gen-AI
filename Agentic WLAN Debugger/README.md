@@ -149,8 +149,8 @@ Streamlit Dashboard (Visualization Layer)
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/your-username/wlan-agentic-ai.git
-cd wlan-agentic-ai
+git clone https://github.com/haseebkhan02/Agentic WLAN Debugger.git
+cd Agentic WLAN Debugger.
 ````
 
 ---
