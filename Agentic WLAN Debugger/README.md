@@ -282,7 +282,7 @@ AI/ML Engineer | Generative AI | Network Intelligence Systems
 If you like this project:
 
 * ⭐ Star the repository
-* 🔁 Share with engineers/recruiters
+* 🔁 Share with engineers
 * 💬 Suggest improvements
 
 ```
