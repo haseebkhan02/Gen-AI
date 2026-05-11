@@ -1,4 +1,4 @@
-# 📡 Agentic AI WLAN Debugger (PCAP Intelligence System)
+# Agentic AI WLAN Debugger (PCAP Intelligence System)
 
 An end-to-end **Agentic AI system for WLAN firmware debugging** that converts raw Wireshark PCAP files into actionable, explainable network diagnostics using **LangGraph + LLM reasoning + packet analysis**.
 
@@ -10,7 +10,7 @@ This system removes the need for manual Wireshark inspection by automatically de
 
 ---
 
-## 🚀 Problem Statement
+## Problem Statement
 
 WiFi/WLAN debugging is traditionally:
 
@@ -21,20 +21,20 @@ WiFi/WLAN debugging is traditionally:
 
 ---
 
-## 💡 Solution
+## Solution
 
 This system builds an **AI-powered debugging pipeline** that:
 
-- Parses PCAP files automatically 📡  
-- Extracts WLAN features 🔍  
-- Detects anomalies + throughput drops ⚡  
-- Identifies root causes 🧠  
-- Generates explainable insights 🧾  
-- Visualizes network behavior 📊  
+- Parses PCAP files automatically   
+- Extracts WLAN features 
+- Detects anomalies + throughput drops  
+- Identifies root causes   
+- Generates explainable insights 
+- Visualizes network behavior  
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```
 
@@ -58,7 +58,7 @@ Streamlit Dashboard (Visualization Layer)
 
 ---
 
-## 🧠 Agent Workflow
+## Agent Workflow
 
 ### 1. Parser Node
 - Reads PCAP file using PyShark
@@ -107,32 +107,32 @@ Streamlit Dashboard (Visualization Layer)
 
 ---
 
-## 📊 Dashboard Features (Streamlit UI)
+## Dashboard Features (Streamlit UI)
 
-### 📦 Packet Insights
+### Packet Insights
 - Packet timeline visualization
 - Protocol distribution
 - Top talkers (source analysis)
 
-### 🧠 AI Analysis
+### AI Analysis
 - Anomaly detection (YES/NO)
 - LLM explanation of behavior
 
-### ⚡ Throughput Analysis
+### Throughput Analysis
 - Mbps trend over time
 - Drop detection visualization
 
-### ⚠️ Root Cause Analysis
+### Root Cause Analysis
 - Firmware/network issue explanation
 - AI-generated diagnostics
 
-### 🪜 Reasoning Trace
+### Reasoning Trace
 - Step-by-step agent decisions
 - Full explainability of AI pipeline
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |------|------------|
@@ -145,7 +145,7 @@ Streamlit Dashboard (Visualization Layer)
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### 1. Clone Repository
 ```bash
@@ -172,7 +172,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🔑 Environment Setup
+## Environment Setup
 
 Create a `.env` file:
 
@@ -182,7 +182,7 @@ GROQ_API_KEY=your_api_key_here
 
 ---
 
-## ▶️ Run Application
+## Run Application
 
 ```bash
 streamlit run app.py
@@ -190,7 +190,7 @@ streamlit run app.py
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 wlan-agentic-ai/
@@ -224,9 +224,9 @@ wlan-agentic-ai/
 
 ---
 
-## 📈 Output Insights
+## Output Insights
 
-### ✔ Example Results
+### Example Results
 
 * **Anomaly Detected:** YES
 * **Throughput Drop:** YES (45% drop)
@@ -235,7 +235,7 @@ wlan-agentic-ai/
 
 ---
 
-## 🚧 Limitations
+## Limitations
 
 * Depends on PyShark / TShark stability
 * Large PCAP files may slow processing
@@ -244,7 +244,7 @@ wlan-agentic-ai/
 
 ---
 
-## 🚀 Future Improvements
+## Future Improvements
 
 * Real-time packet streaming (Kafka / sockets)
 * Scapy-based crash-free parser
@@ -255,7 +255,7 @@ wlan-agentic-ai/
 
 ---
 
-## 🧠 Key Innovation
+## Key Innovation
 
 This system transforms:
 
@@ -270,20 +270,20 @@ By combining:
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Haseeb Khan**
 AI/ML Engineer | Generative AI | Network Intelligence Systems
 
 ---
 
-## ⭐ Support
+## Support
 
 If you like this project:
 
-* ⭐ Star the repository
-* 🔁 Share with engineers
-* 💬 Suggest improvements
+*  Star the repository
+*  Share with engineers
+*  Suggest improvements
 
 ```
 
