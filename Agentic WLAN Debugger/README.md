@@ -1,4 +1,3 @@
-```markdown
 # 📡 Agentic AI WLAN Debugger (PCAP Intelligence System)
 
 An end-to-end **Agentic AI system for WLAN firmware debugging** that converts raw Wireshark PCAP files into actionable, explainable network diagnostics using **LangGraph + LLM reasoning + packet analysis**.
