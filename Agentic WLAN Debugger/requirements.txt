@@ -1,0 +1,6 @@
+streamlit
+pyshark
+langchain
+langgraph
+langchain-groq
+pandas
