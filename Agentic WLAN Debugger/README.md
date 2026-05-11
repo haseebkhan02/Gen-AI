@@ -1,5 +1,3 @@
----
-
 ```markdown
 # 📡 Agentic AI WLAN Debugger (PCAP Intelligence System)
 
