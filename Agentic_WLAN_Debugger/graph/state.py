@@ -13,3 +13,8 @@ class AgentState(TypedDict):
     api_key: str
     throughput_data: Optional[dict]
     throughput_drop: Optional[bool]
+    retry_rate: Optional[float]
+    avg_rssi: Optional[float]
+    severity: Optional[str]
+    firmware_issue: Optional[bool]
+    packet_statistics: Optional[dict]

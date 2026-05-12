@@ -8,7 +8,7 @@ def throughput_node(state):
     df = pd.DataFrame(packets)
 
     # Safe guards
-    if df.empty or "time" not in df:
+    if df.empty or "time" not in df.columns:
         return {
             "throughput_data": {},
             "throughput_drop": False,
@@ -20,7 +20,10 @@ def throughput_node(state):
     df = df.dropna(subset=["time"])
 
     # Packet size safe conversion
-    df["length"] = pd.to_numeric(df.get("length", 0), errors="coerce").fillna(0)
+    #df["length"] = pd.to_numeric(df.get("length", 0), errors="coerce").fillna(0)
+    if "length" not in df.columns:
+        df["length"] = 0
+    df["length"] = pd.to_numeric(df["length"], errors="coerce").fillna(0)
 
     # Throughput calculation
     throughput = (

@@ -35,11 +35,14 @@ if uploaded_file:
     tmp = tempfile.NamedTemporaryFile(delete=False, suffix=".pcap")
     tmp.write(uploaded_bytes)
     tmp.flush()
-    os.fsync(tmp.fileno())   # 🔥 FORCE write to disk
+    os.fsync(tmp.fileno())   
     tmp.close()
 
     file_path = tmp.name
-
+    # 1
+    #st.write("Temporary PCAP Path:", file_path)
+    #st.write("Uploaded File Size:", len(uploaded_bytes))
+    
     graph = get_graph()
 
     with st.spinner("Running Agentic AI Workflow..."):
@@ -49,8 +52,15 @@ if uploaded_file:
             "api_key": api_key
         })
 
+    # 2 
+    #st.write("Graph Result Keys:", result.keys())
+
     packets = result.get("packets", [])
     df = packets_to_df(packets)
+
+    # 3
+    #st.write("DataFrame Shape:", df.shape)
+    #st.dataframe(df.head(20))
 
     st.success("Analysis Complete")
 
