@@ -40,26 +40,6 @@ This system builds an **AI-powered debugging pipeline** that:
   <img src="Architecture_Diagram.png" width="850"/>
 </p>
 
-```
-
-PCAP File Upload
-↓
-Parser Node (PyShark)
-↓
-Feature Extraction Layer
-↓
-LangGraph Orchestration Engine
-├── Analyzer Node (Anomaly Detection)
-├── Throughput Node (Performance Analysis)
-├── RCA Node (Root Cause Analysis)
-└── Summary Node (Explainability)
-↓
-Groq LLM (Reasoning Engine)
-↓
-Streamlit Dashboard (Visualization Layer)
-
-````
-
 ---
 
 ## Agent Workflow
