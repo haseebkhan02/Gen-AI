@@ -36,7 +36,7 @@ This system builds an **AI-powered debugging pipeline** that:
 
 ## System Architecture
 
-![Agentic WLAN Debugger](Architecture_Diagram.png)
+![Agentic WLAN Debugger](Gen-AI/Agentic_WLAN_Debugger/Architecture_Diagram.png)
 
 ```
 
