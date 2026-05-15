@@ -36,6 +36,10 @@ This system builds an **AI-powered debugging pipeline** that:
 
 ## System Architecture
 
+<p align="center">
+  <img src="Architecture_Diagram" width="850"/>
+</p>
+
 ```
 
 PCAP File Upload
