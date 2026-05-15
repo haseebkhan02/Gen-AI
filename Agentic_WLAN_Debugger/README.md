@@ -36,6 +36,8 @@ This system builds an **AI-powered debugging pipeline** that:
 
 ## System Architecture
 
+![Agentic WLAN Debugger](Architecture_Diagram.png)
+
 ```
 
 PCAP File Upload
