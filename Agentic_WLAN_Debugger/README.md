@@ -37,28 +37,8 @@ This system builds an **AI-powered debugging pipeline** that:
 ## System Architecture
 
 <p align="center">
-  <img src="Architecture_Diagram" width="850"/>
+  <img src="Architecture_Diagram.png" width="850"/>
 </p>
-
-```
-
-PCAP File Upload
-↓
-Parser Node (PyShark)
-↓
-Feature Extraction Layer
-↓
-LangGraph Orchestration Engine
-├── Analyzer Node (Anomaly Detection)
-├── Throughput Node (Performance Analysis)
-├── RCA Node (Root Cause Analysis)
-└── Summary Node (Explainability)
-↓
-Groq LLM (Reasoning Engine)
-↓
-Streamlit Dashboard (Visualization Layer)
-
-````
 
 ---
 
@@ -141,7 +121,7 @@ Streamlit Dashboard (Visualization Layer)
 | Layer | Technology |
 |------|------------|
 | Agent Framework | LangGraph / LangChain |
-| LLM | Groq API (openai/gpt-oss-120b) |
+| LLM | Groq API (groq/compound) |
 | Packet Parsing | PyShark / TShark |
 | Backend | Python |
 | UI | Streamlit |
@@ -236,6 +216,35 @@ wlan-agentic-ai/
 * **Throughput Drop:** YES (45% drop)
 * **Root Cause:** High retransmissions due to weak RSSI
 * **Insight:** Possible RF interference or firmware ACK delay
+
+
+## Dashboard Output
+### Packet Analysis Dashboard
+
+![Packet Dashboard](Output_Images/Analysis.PNG)
+
+### Protocol Distribution
+![Protocol Distribution] (Output_Images/Protocol Distribution.PNG)
+
+### Top Talkers
+![Top Talkers] (Output_Images/Top Talkers.PNG)
+
+### Reasoning Steps
+![Reasoning Steps] (Output_Images/Reasoning Steps.PNG)
+
+
+### Throughput Analysis
+
+![Throughput Analysis](Output_Images/Throughput.PNG)
+
+### Root Cause Analysis
+
+![RCA Output](Output_Images/Root Cause Analysis.PNG)
+
+### Summary
+
+![Summary](Output_Images/Summary.PNG)
+
 
 ---
 
