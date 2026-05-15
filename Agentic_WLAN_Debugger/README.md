@@ -224,14 +224,13 @@ wlan-agentic-ai/
 ![Packet Dashboard](Output_Images/Analysis.PNG)
 
 ### Protocol Distribution
-![Protocol Distribution] (Output_Images/Protocol_Distribution.PNG)
+![Protocol Distribution](Output_Images/Protocol_Distribution.PNG)
 
 ### Top Talkers
-![Top Talkers] (Output_Images/Top_Talkers.PNG)
+![Top Talkers](Output_Images/Top_Talkers.PNG)
 
 ### Reasoning Steps
-![Reasoning Steps] (Output_Images/Reasoning_Steps.PNG)
-
+![Reasoning Steps](Output_Images/Reasoning_Steps.PNG)
 
 ### Throughput Analysis
 ![Throughput Analysis](Output_Images/Throughput.PNG)
