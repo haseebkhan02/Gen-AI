@@ -7,8 +7,7 @@ from utils.visualization import packets_to_df
 
 
 st.set_page_config(layout="wide")
-st.title("📡 Agentic AI WLAN Debugger")
-
+st.title("Agentic AI WLAN Debugger")
 
 api_key = st.text_input(
     "Enter Groq API Key",
@@ -39,9 +38,6 @@ if uploaded_file:
     tmp.close()
 
     file_path = tmp.name
-    # 1
-    #st.write("Temporary PCAP Path:", file_path)
-    #st.write("Uploaded File Size:", len(uploaded_bytes))
     
     graph = get_graph()
 
@@ -52,30 +48,23 @@ if uploaded_file:
             "api_key": api_key
         })
 
-    # 2 
-    #st.write("Graph Result Keys:", result.keys())
 
     packets = result.get("packets", [])
     df = packets_to_df(packets)
 
-    # 3
-    #st.write("DataFrame Shape:", df.shape)
-    #st.dataframe(df.head(20))
 
     st.success("Analysis Complete")
 
     tab1, tab2, tab3, tab4, tab5 = st.tabs([
-        "📊 Packet Insights",
-        "🧠 Analysis",
-        "⚠️ Root Cause",
-        "🪜 Reasoning Steps",
-        "📈 Throughput"
+        "Packet Insights",
+        "Analysis",
+        "Root Cause",
+        "Reasoning Steps",
+        "Throughput"
     ])
 
 
-    # =========================
     # TAB 1 - PACKET INSIGHTS
-    # =========================
     with tab1:
 
         st.subheader("Packet Timeline")
@@ -95,9 +84,7 @@ if uploaded_file:
             st.warning("No data")
 
 
-    # =========================
     # TAB 2 - ANALYSIS
-    # =========================
     with tab2:
 
         st.write(result.get("analysis"))
@@ -117,9 +104,7 @@ if uploaded_file:
         )
 
 
-    # =========================
     # TAB 3 - RCA
-    # =========================
     with tab3:
 
         if result.get("root_cause"):
@@ -131,9 +116,7 @@ if uploaded_file:
         st.write(result.get("summary"))
 
 
-    # =========================
     # TAB 4 - REASONING TRACE
-    # =========================
     with tab4:
 
         st.subheader("Agent Reasoning Trace")
@@ -144,9 +127,7 @@ if uploaded_file:
             st.markdown(f"**Step {i}:** {step}")
 
 
-    # =========================
     # TAB 5 - THROUGHPUT (NEW)
-    # =========================
     with tab5:
 
         st.subheader("Throughput Analysis")

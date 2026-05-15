@@ -17,6 +17,9 @@ def parse_pcap(file_path: str):
     
     try:
         for i, pkt in enumerate(capture):
+            # keeping packet limit 200, due to Free-tier API limit
+            if i>200:
+                break
             try:
                 # ── time ──────────────────────────────────────────
                 time_val = str(pkt.sniff_time)
@@ -81,4 +84,4 @@ def parse_pcap(file_path: str):
     return packets
 
 #print("================================================================")
-#print(parse_pcap('E:\\Gen AI\\Wireshark AI\\test_dataset\\test.pcap'))
+#print(parse_pcap('E:\\Gen AI\\Wireshark AI\\test_dataset\\fuzz-2006-06-26-2594.pcap'))

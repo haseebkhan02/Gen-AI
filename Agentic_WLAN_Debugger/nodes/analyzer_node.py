@@ -1,40 +1,110 @@
 # nodes/analyzer_node.py
 
 from llm.groq_client import get_llm
+import pandas as pd
+
+
 def analyzer_node(state):
+
     llm = get_llm(state["api_key"])
 
-    packets = state["packets"][:200]
-    throughput_drop = state.get("throughput_drop", False)
+    packets = state["packets"][:100]
 
-    sample_text = "\n".join([
-        f"time={p.get('time','')} proto={p.get('protocol','')} "
-        f"src={p.get('src','')} dst={p.get('dst','')} "
-        f"len={p.get('length',0)} retry={p.get('retry',0)} rssi={p.get('rssi','')}"
-        for p in packets
-    ])
+    throughput_drop = state.get(
+        "throughput_drop",
+        False
+    )
 
-    response = llm.invoke(f"""
-You are analyzing WLAN firmware behavior.
+    df = pd.DataFrame(packets)
 
-Throughput Drop Detected: {throughput_drop}
+    # =========================
+    # BASIC METRICS ONLY
+    # =========================
 
-Sample Packets (up to 200):
-{sample_text}
+    total_packets = len(df)
 
-Task:
-1. Detect network anomalies (retries, auth failures, delays)
-2. Correlate with throughput condition
-3. Identify if firmware issue is likely
+    protocol_distribution = {}
 
-Output format:
-ANOMALY: YES/NO
-EXPLANATION:
-""").content
+    if "protocol" in df.columns:
+        protocol_distribution = (
+            df["protocol"]
+            .value_counts()
+            .head(3)
+            .to_dict()
+        )
 
-    anomaly = "ANOMALY: YES" in response.upper()
-    steps = state.get("reasoning_steps", [])
-    steps.append("Analyzed WLAN behavior with throughput context")
+    retry_count = 0
+
+    if "retry" in df.columns:
+        retry_count = (
+            df["retry"]
+            .astype(str)
+            .eq("1")
+            .sum()
+        )
+
+    avg_rssi = None
+
+    if "rssi" in df.columns:
+        avg_rssi = (
+            pd.to_numeric(
+                df["rssi"],
+                errors="coerce"
+            ).mean()
+        )
+
+    avg_packet_length = 0
+
+    if "length" in df.columns:
+        avg_packet_length = (
+            pd.to_numeric(
+                df["length"],
+                errors="coerce"
+            ).mean()
+        )
+
+    # =========================
+    # VERY SMALL PROMPT
+    # =========================
+
+    prompt = f"""
+Analyze WLAN health.
+
+Packets: {total_packets}
+
+Protocols: {protocol_distribution}
+
+Retries: {retry_count}
+
+Average RSSI: {avg_rssi}
+
+Average Length: {avg_packet_length}
+
+Throughput Drop: {throughput_drop}
+
+Detect:
+- anomalies
+- throughput issues
+- possible firmware instability
+
+Return short concise output only.
+"""
+
+    response = llm.invoke(prompt).content
+
+    anomaly = (
+        "anomaly" in response.lower()
+        or "issue" in response.lower()
+    )
+
+    steps = state.get(
+        "reasoning_steps",
+        []
+    )
+
+    steps.append(
+        "Analyzed summarized WLAN metrics"
+    )
 
     return {
         "analysis": response,
