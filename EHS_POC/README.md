@@ -1,4 +1,4 @@
-# EHS AI POC — Environment Health & Safety Monitoring
+# EHS AI POC : Environment Health & Safety Monitoring
 
 An end-to-end agentic AI system for industrial safety compliance monitoring using computer vision and LLM-powered reasoning.
 
