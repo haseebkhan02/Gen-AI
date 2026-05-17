@@ -6,32 +6,7 @@ An end-to-end agentic AI system for industrial safety compliance monitoring usin
 
 ## 📐 Architecture Overview
 
-```
-Image Input
-    │
-    ▼
-┌──────────────────┐     ┌────────────────────┐
-│  CV Module       │────▶│  Knowledge Base     │
-│  YOLOv8 + PPE    │     │  ChromaDB + MiniLM  │
-│  + HSV Analysis  │     │  10 EHS Policies    │
-└──────────────────┘     └────────┬───────────┘
-                                  │
-                                  ▼
-                         ┌────────────────────┐
-                         │  Reasoning Agent   │
-                         │  Groq API│
-                         └────────┬───────────┘
-                                  │
-                         ┌────────▼───────────┐
-                         │  FastAPI Backend   │
-                         │  REST API Server   │
-                         └────────┬───────────┘
-                                  │
-                         ┌────────▼───────────┐
-                         │  Streamlit UI      │
-                         └────────────────────┘
-```
-
+![Architecture Diagram](ehs_poc_architecture.jpg)
 ## 🗂️ Project Structure
 
 ```
