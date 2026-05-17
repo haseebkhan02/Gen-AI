@@ -1,13 +1,13 @@
-# 🦺 EHS AI POC — Environment Health & Safety Monitoring
+# EHS AI POC — Environment Health & Safety Monitoring
 
 An end-to-end agentic AI system for industrial safety compliance monitoring using computer vision and LLM-powered reasoning.
 
 ---
 
-## 📐 Architecture Overview
+##  Architecture Overview
 
 ![Architecture Diagram](ehs_poc_architecture.jpg)
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 ehs_poc/
@@ -24,7 +24,7 @@ ehs_poc/
 └── README.md
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Prerequisites
 - Python 3.9+
@@ -84,7 +84,7 @@ streamlit run app.py
 
 ---
 
-## 🔌 API Endpoints
+## API Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -131,7 +131,7 @@ curl -X POST "http://localhost:8000/knowledge/query" \
 
 ---
 
-## 📋 EHS Policies Included
+## EHS Policies Included
 
 | ID | Policy | Severity |
 |----|--------|----------|
@@ -148,7 +148,7 @@ curl -X POST "http://localhost:8000/knowledge/query" \
 
 ---
 
-## 📤 Sample Output
+## Sample Output
 
 ### Compliance Assessment
 ```json
@@ -188,7 +188,7 @@ curl -X POST "http://localhost:8000/knowledge/query" \
 
 ---
 
-## ⚙️ Design Decisions
+## Design Decisions
 
 | Aspect | Decision | Reason |
 |--------|----------|--------|
@@ -200,7 +200,7 @@ curl -X POST "http://localhost:8000/knowledge/query" \
 | Reasoning temp | 0.1 | Deterministic, reproducible compliance outputs |
 | Report storage | JSON files | Simple, portable, audit trail |
 
-## ⚠️ Assumptions
+## Assumptions
 
 1. Images are representative of real-time video frames
 2. PPE compliance judged by YoloV8 based custom model
@@ -210,7 +210,7 @@ curl -X POST "http://localhost:8000/knowledge/query" \
 
 ---
 
-## 🔮 Production Extensions
+## Production Extensions
 
 - Fine-tune YOLOv8 on labeled safety dataset (hard hats, vests, goggles, gloves)
 - Add video stream support (RTSP camera feeds)
