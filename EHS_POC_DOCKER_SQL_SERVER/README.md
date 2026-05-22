@@ -1,10 +1,10 @@
-# 🦺 Agentic AI Powered Environment Health & Safety (EHS) Monitoring System
+# Agentic AI Powered Environment Health & Safety (EHS) Monitoring System
 
 An end-to-end Agentic AI based Environment Health & Safety (EHS) monitoring system integrating Computer Vision, RAG (Retrieval Augmented Generation), and LLM-based reasoning for automated safety compliance monitoring and incident generation.
 
 ---
 
-# 📌 Problem Statement
+# Problem Statement
 
 Industrial and laboratory environments require continuous monitoring for:
 
@@ -20,15 +20,15 @@ Manual monitoring is:
 
 This project demonstrates an AI-driven solution capable of:
 
-✅ Detecting safety violations from images/videos  
-✅ Reasoning over EHS policies  
-✅ Generating structured incident reports  
-✅ Answering EHS-related questions using RAG  
-✅ Providing explainable and traceable outputs  
+ Detecting safety violations from images/videos  
+ Reasoning over EHS policies  
+ Generating structured incident reports  
+ Answering EHS-related questions using RAG  
+ Providing explainable and traceable outputs  
 
 ---
 
-# 🚀 Features
+# Features
 
 ## Computer Vision
 - PPE Detection
@@ -61,7 +61,7 @@ This project demonstrates an AI-driven solution capable of:
 
 ---
 
-# 🏗️ System Architecture
+# System Architecture
 
 ```text
                 ┌────────────────────┐
@@ -91,7 +91,7 @@ CV Detection        Agentic Reasoning      RAG Engine
 
 ---
 
-# 🧠 Tech Stack
+# Tech Stack
 
 | Layer           | Technology            |
 | --------------- | --------------------- |
@@ -109,7 +109,7 @@ CV Detection        Agentic Reasoning      RAG Engine
 
 ---
 
-# ⚙️ Setup Instructions
+# Setup Instructions
 
 # 1. Clone Repository
 
@@ -224,7 +224,7 @@ http://localhost:8501
 
 ---
 
-# 🖼️ Sample Workflow
+# Sample Workflow
 
 ## Step 1
 
@@ -267,7 +267,7 @@ Incident saved into Microsoft SQL Server.
 
 ---
 
-# 📡 API Endpoints
+# API Endpoints
 
 ## Root Endpoint
 
@@ -310,7 +310,7 @@ Returns all stored incidents.
 
 ---
 
-# 🧾 Example Incident Report
+# Example Incident Report
 
 ```json
 {
@@ -328,7 +328,7 @@ Returns all stored incidents.
 
 ---
 
-# 📚 Datasets Used
+# Datasets Used
 
 ## PPE Detection
 
@@ -344,7 +344,7 @@ Returns all stored incidents.
 
 ---
 
-# 🧠 Agentic Workflow
+# Agentic Workflow
 
 The system uses modular agents:
 
@@ -357,7 +357,7 @@ The system uses modular agents:
 
 ---
 
-# 🔒 Security Best Practices
+# Security Best Practices
 
 * Secrets stored in `.env`
 * `.env` excluded using `.gitignore`
@@ -367,7 +367,7 @@ The system uses modular agents:
 
 ---
 
-# 🐳 Docker Support
+# Docker Support
 
 ## Build Image
 
@@ -383,7 +383,7 @@ docker run -p 8000:8000 ehs-ai
 
 ---
 
-# 📈 Future Improvements
+# Future Improvements
 
 * Real-time CCTV monitoring
 * Multi-camera support
@@ -397,7 +397,7 @@ docker run -p 8000:8000 ehs-ai
 
 ---
 
-# 📌 Assumptions
+# Assumptions
 
 * PPE dataset available
 * SQL Server installed locally
@@ -406,28 +406,21 @@ docker run -p 8000:8000 ehs-ai
 
 ---
 
-# 🎯 Evaluation Goals Covered
+# Evaluation Goals Covered
 
-✅ Computer Vision
-✅ Agentic AI
-✅ Multi-step workflow
-✅ RAG implementation
-✅ Structured outputs
-✅ REST APIs
-✅ Explainable reasoning
-✅ Enterprise-grade storage
-
----
-
-# 👨‍💻 Author
-
-Your Name
+ Computer Vision
+ Agentic AI
+ Multi-step workflow
+ RAG implementation
+ Structured outputs
+ REST APIs
+ Explainable reasoning
+ Enterprise-grade storage
 
 ---
 
-# 📄 License
+#  Author
 
-MIT License
+Haseeb Khan
 
-```
 ```
