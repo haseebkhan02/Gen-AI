@@ -1,0 +1,152 @@
+[
+  {
+    "id": "PPE-001",
+    "title": "Personal Protective Equipment (PPE) Policy",
+    "category": "PPE",
+    "content": "All personnel entering production floors, laboratories, or active construction zones must wear appropriate Personal Protective Equipment at all times. Hard hats (ANSI Z89.1 Class E) are mandatory in areas with overhead hazards or active construction. Safety glasses or goggles (ANSI Z87.1) must be worn in all chemical handling areas and machine shops. High-visibility vests are required in forklift operating zones and outdoor work areas. Safety footwear with steel toe caps (ASTM F2412) is mandatory on all production floors. Chemical-resistant gloves must be worn when handling acids, bases, or solvents. Hearing protection is required in areas exceeding 85 dB. Respiratory protection (N95 or above) must be worn when airborne particulates exceed permissible exposure limits. Failure to comply with PPE requirements constitutes a serious safety violation and may result in immediate suspension from work area.",
+    "severity_if_violated": "HIGH",
+    "corrective_actions": [
+      "Immediately stop work and don appropriate PPE",
+      "Document the violation in the incident log",
+      "Conduct toolbox talk with the team",
+      "Review PPE training records for involved personnel",
+      "Re-train employee on PPE requirements within 48 hours"
+    ]
+  },
+  {
+    "id": "FIRE-001",
+    "title": "Fire Safety and Emergency Evacuation Policy",
+    "category": "Fire Safety",
+    "content": "Fire exits must remain clear and unobstructed at all times with a minimum clearance of 36 inches. Fire extinguishers must be mounted in designated locations, inspected monthly, and serviced annually. No combustible materials shall be stored within 3 feet of electrical panels, heat sources, or emergency exits. Flammable liquids exceeding 10 gallons must be stored in approved flammable storage cabinets. Hot work (welding, cutting, grinding) requires a Hot Work Permit and a fire watch for at least 30 minutes after work completion. Smoke detectors and sprinkler heads must not be obstructed. Emergency evacuation maps must be posted in all areas and updated annually. Fire drills must be conducted twice per year.",
+    "severity_if_violated": "CRITICAL",
+    "corrective_actions": [
+      "Immediately clear blocked fire exits",
+      "Remove combustible materials from prohibited areas",
+      "Inspect and replace damaged fire safety equipment",
+      "Conduct emergency evacuation drill",
+      "File incident report with facility manager",
+      "Review hot work permit procedures"
+    ]
+  },
+  {
+    "id": "CHEM-001",
+    "title": "Chemical Handling and Storage Policy",
+    "category": "Chemical Safety",
+    "content": "All chemicals must be stored according to their Safety Data Sheets (SDS) and must be segregated by hazard class. Incompatible chemicals (e.g., acids and bases, oxidizers and flammables) must be stored separately with secondary containment. Chemical containers must be labeled with chemical name, hazard pictograms, and date of opening. SDS sheets must be accessible within 30 seconds for all chemicals in use. Spill kits must be available in all chemical storage and handling areas. Chemical spills must be reported immediately. Personnel must be trained in spill response procedures before handling hazardous chemicals. Eyewash stations and emergency showers must be within 10 seconds travel from any chemical handling area and tested weekly. Waste chemicals must be disposed of through approved hazardous waste contractors only.",
+    "severity_if_violated": "HIGH",
+    "corrective_actions": [
+      "Immediately contain and clean up any chemical spills",
+      "Verify all chemical containers are properly labeled",
+      "Check SDS availability for all chemicals on site",
+      "Inspect secondary containment systems",
+      "Re-segregate incompatible chemicals immediately",
+      "Test eyewash stations and emergency showers",
+      "Report to EHS officer within 1 hour"
+    ]
+  },
+  {
+    "id": "ELEC-001",
+    "title": "Electrical Safety Policy",
+    "category": "Electrical Safety",
+    "content": "Lockout/Tagout (LOTO) procedures must be followed before performing any maintenance on electrical equipment. All electrical work must be performed by qualified electricians holding valid certifications. Electrical panels must have a minimum 36-inch clearance on all sides. Extension cords are not permitted as permanent wiring solutions. Ground Fault Circuit Interrupters (GFCI) must be used in wet or damp locations. Electrical equipment must be de-energized before cleaning or servicing. Arc flash boundaries must be established and posted for equipment rated above 600 volts. Personal protective equipment for electrical work includes arc-rated clothing, insulated gloves, and face shields. Regular electrical inspections must be conducted quarterly by certified electricians.",
+    "severity_if_violated": "CRITICAL",
+    "corrective_actions": [
+      "Immediately de-energize affected equipment",
+      "Implement LOTO procedures",
+      "Clear electrical panel access areas",
+      "Replace temporary extension cord solutions with permanent wiring",
+      "Conduct electrical safety training",
+      "Schedule professional electrical inspection"
+    ]
+  },
+  {
+    "id": "FALL-001",
+    "title": "Fall Protection Policy",
+    "category": "Fall Protection",
+    "content": "Fall protection is required for all work at heights of 4 feet or more in general industry, and 6 feet in construction. Approved fall protection systems include guardrails, safety nets, and personal fall arrest systems (PFAS). Full-body harnesses must be inspected before each use and removed from service if damaged. Anchor points must be capable of supporting 5,000 pounds per worker. Ladders must extend 3 feet above the landing surface. Portable ladders must be secured at top and bottom. Scaffolding must be erected by competent persons and inspected daily. Floor openings must be covered with secured covers capable of supporting twice the expected load. Safety nets must be installed when working at heights greater than 25 feet.",
+    "severity_if_violated": "CRITICAL",
+    "corrective_actions": [
+      "Immediately halt work at height",
+      "Install appropriate fall protection before resuming",
+      "Inspect all harnesses and fall arrest equipment",
+      "Verify anchor point load ratings",
+      "Conduct fall protection training",
+      "Document and investigate any near-miss incidents"
+    ]
+  },
+  {
+    "id": "ERGON-001",
+    "title": "Ergonomics and Manual Handling Policy",
+    "category": "Ergonomics",
+    "content": "Manual lifting of loads exceeding 25 kg requires mechanical assistance or team lifting with a minimum of two persons. Proper lifting technique must be used: bend knees, keep back straight, hold load close to body. Repetitive manual handling tasks must be assessed using the NIOSH Lifting Equation. Workstations must be adjustable to accommodate workers of different statures. Anti-fatigue mats must be provided in areas requiring prolonged standing. Computer workstations must meet ergonomic standards including monitor height at eye level, keyboard at elbow height, and adequate lighting between 300-500 lux. Ergonomic assessments must be conducted for all new workstations and annually thereafter. Workers experiencing musculoskeletal symptoms must be referred to occupational health.",
+    "severity_if_violated": "MEDIUM",
+    "corrective_actions": [
+      "Provide mechanical lifting assistance",
+      "Conduct ergonomic workstation assessment",
+      "Re-train employees on safe lifting techniques",
+      "Rotate tasks to reduce repetitive strain",
+      "Refer affected workers to occupational health",
+      "Install anti-fatigue mats where needed"
+    ]
+  },
+  {
+    "id": "FORKLIFT-001",
+    "title": "Forklift and Powered Industrial Truck Safety Policy",
+    "category": "Material Handling",
+    "content": "Only certified and authorized operators may operate forklifts and powered industrial trucks. Certification must be renewed every three years. Pre-shift safety inspections must be documented before each shift. Pedestrians always have the right of way in mixed traffic areas. Forklifts must not exceed the load capacity shown on the nameplate. Loads must be carried at the lowest safe travel position, typically 6-12 inches above ground. Speed limit in pedestrian areas is 5 mph. Forklifts must not be used to lift personnel unless an approved work platform is properly secured. Refueling or battery charging must occur only in designated areas. Pedestrian barriers and floor markings must delineate forklift operating zones.",
+    "severity_if_violated": "HIGH",
+    "corrective_actions": [
+      "Immediately suspend unlicensed operator",
+      "Verify certification status for all forklift operators",
+      "Enforce pedestrian separation protocols",
+      "Conduct forklift safety refresher training",
+      "Inspect and repair floor markings and barriers",
+      "Review and update traffic management plan"
+    ]
+  },
+  {
+    "id": "WASTE-001",
+    "title": "Waste Management and Housekeeping Policy",
+    "category": "Housekeeping",
+    "content": "Work areas must be maintained in a clean and orderly condition at all times. Walkways and aisles must be kept clear with minimum 36-inch clearance. Waste must be segregated at source into: general waste, recyclables, hazardous chemical waste, biological waste, and electronic waste. Waste containers must be clearly labeled and color-coded per site standards. Hazardous waste must be stored in designated areas and disposed of within 90 days per regulatory requirements. Oil and chemical spills must be cleaned up immediately using appropriate materials. Drains must be protected from contamination. Daily housekeeping inspections must be logged. Contractors must adhere to the same housekeeping standards as site personnel.",
+    "severity_if_violated": "MEDIUM",
+    "corrective_actions": [
+      "Immediately clean up spills and clear walkways",
+      "Label all waste containers correctly",
+      "Conduct housekeeping audit of work area",
+      "Brief all personnel on waste segregation",
+      "Schedule hazardous waste collection",
+      "Document findings in daily inspection log"
+    ]
+  },
+  {
+    "id": "INCIDENT-001",
+    "title": "Incident Reporting and Investigation Policy",
+    "category": "Incident Management",
+    "content": "All incidents including injuries, near-misses, property damage, and environmental releases must be reported within 1 hour of occurrence. Medical emergencies must be reported immediately to the site emergency number. Incident scenes must be preserved pending investigation unless a safety hazard requires immediate cleanup. Root cause analysis using the 5-Why methodology must be completed within 72 hours for all recordable incidents. Corrective and preventive actions (CAPA) must be assigned, tracked, and closed within 30 days. Serious incidents resulting in hospitalization must be reported to regulatory authorities within 24 hours. Monthly incident trend analysis must be reviewed by EHS committee. All personnel involved in incidents must receive a medical evaluation within 24 hours.",
+    "severity_if_violated": "HIGH",
+    "corrective_actions": [
+      "File incident report immediately",
+      "Secure incident scene",
+      "Notify EHS officer and site manager",
+      "Conduct root cause analysis",
+      "Implement immediate corrective actions",
+      "Notify regulatory bodies if required"
+    ]
+  },
+  {
+    "id": "CONFINED-001",
+    "title": "Confined Space Entry Policy",
+    "category": "Confined Space",
+    "content": "All confined space work requires a Confined Space Entry Permit signed by a qualified Competent Person. Confined spaces must be tested for oxygen levels (19.5%-23.5% acceptable), combustible gases (<10% LEL), and toxic gases (below TLV) before entry. Continuous atmospheric monitoring is required during entry. An attendant must be stationed outside the confined space during all entry operations. Rescue equipment must be available at the entry point. Mechanical ventilation must be used when natural ventilation is insufficient. All entrants must be trained in confined space hazards and rescue procedures. Communication between entrant and attendant must be maintained continuously. Entries into permit-required confined spaces must be logged and permits retained for 1 year.",
+    "severity_if_violated": "CRITICAL",
+    "corrective_actions": [
+      "Immediately evacuate confined space",
+      "Secure entry point and revoke access",
+      "Verify atmospheric conditions before re-entry",
+      "Issue new Confined Space Entry Permit",
+      "Conduct emergency response drill",
+      "Retrain all confined space entry personnel"
+    ]
+  }
+]
