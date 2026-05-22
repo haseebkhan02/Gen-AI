@@ -1,222 +1,207 @@
-# Agentic AI Powered Environment Health & Safety (EHS) Monitoring System
+# EHS AI POC
 
-An end-to-end Agentic AI based Environment Health & Safety (EHS) monitoring system integrating Computer Vision, RAG (Retrieval Augmented Generation), and LLM-based reasoning for automated safety compliance monitoring and incident generation.
+Agentic AI system for Environment, Health & Safety (EHS) monitoring using:
 
----
-
-# Problem Statement
-
-Industrial and laboratory environments require continuous monitoring for:
-
-- PPE compliance
-- Restricted area violations
-- Unsafe working conditions
-- Policy adherence
-
-Manual monitoring is:
-- expensive
-- inconsistent
-- difficult to scale
-
-This project demonstrates an AI-driven solution capable of:
-
- Detecting safety violations from images/videos  
- Reasoning over EHS policies  
- Generating structured incident reports  
- Answering EHS-related questions using RAG  
- Providing explainable and traceable outputs  
+* FastAPI backend
+* Streamlit frontend
+* YOLOv8 Computer Vision
+* Groq LLM reasoning
+* SQL Server database
+* Dockerized deployment
 
 ---
 
 # Features
 
-## Computer Vision
-- PPE Detection
-- Helmet detection
-- Safety vest detection
-- Person detection
-- Unsafe condition identification
-
-## Agentic AI Workflow
-- Multi-agent architecture
-- Dynamic policy reasoning
-- Violation evaluation
-- Corrective action generation
-
-## RAG-based Knowledge Retrieval
-- Query EHS documents
-- Retrieve SOP/policy context
-- Context-aware responses
-
-## Incident Management
-- Structured incident reports
-- Severity classification
-- Corrective/preventive actions
-- SQL Server persistence
-
-## Frontend & APIs
-- Streamlit dashboard
-- FastAPI backend
-- REST APIs
+* PPE detection using YOLOv8
+* Hazard detection
+* AI-powered compliance reasoning
+* Incident report generation
+* SQL Server persistence
+* Knowledge base semantic search
+* Streamlit dashboard UI
+* Dockerized backend + frontend + SQL Server
 
 ---
 
-# System Architecture
+# Project Structure
 
 ```text
-                ┌────────────────────┐
-                │   Streamlit UI     │
-                └─────────┬──────────┘
-                          │
-                    REST API Calls
-                          │
-                ┌─────────▼──────────┐
-                │     FastAPI        │
-                └─────────┬──────────┘
-                          │
-     ┌────────────────────┼────────────────────┐
-     │                    │                    │
-     ▼                    ▼                    ▼
-CV Detection        Agentic Reasoning      RAG Engine
-(YOLOv8)            (Groq LLM)             (FAISS)
-
-     │                    │                    │
-     └────────────┬───────┴────────────┬──────┘
-                  ▼                    ▼
-         Incident Generator      Policy Retrieval
-
-                  ▼
-        Microsoft SQL Server
-````
+EHS_POC/
+│
+├── backend/
+│   ├── main.py
+│   ├── database.py
+│   ├── cv_module.py
+│   ├── reasoning_agent.py
+│   ├── knowledge_base_module.py
+│   └── reports/
+│
+├── frontend/
+│   └── app.py
+│
+├── knowledge_base/
+│   └── ehs_policies.json
+│
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+├── .env
+└── README.md
+```
 
 ---
 
 # Tech Stack
 
-| Layer           | Technology            |
-| --------------- | --------------------- |
-| Frontend        | Streamlit             |
-| Backend         | FastAPI               |
-| Computer Vision | YOLOv8                |
-| LLM             | Groq + Llama 3        |
-| RAG             | LangChain + FAISS     |
-| Embeddings      | Sentence Transformers |
-| Database        | Microsoft SQL Server  |
-| ORM             | SQLAlchemy            |
-| Deployment      | Docker                |
+## Backend
+
+* FastAPI
+* SQLAlchemy
+* PyODBC
+* Uvicorn
+
+## Frontend
+
+* Streamlit
+
+## AI / ML
+
+* YOLOv8
+* Groq LLM
+* ChromaDB
+
+## Database
+
+* Microsoft SQL Server
+
+## Containerization
+
+* Docker
+* Docker Compose
 
 ---
 
----
+# Environment Variables (.env)
 
-# Setup Instructions
-
-# 1. Clone Repository
-
-```bash
-git clone https://github.com/your-username/agentic-ai-ehs-monitoring-system.git
-
-cd EHS_POC_DOCKER_SQL_SERVER
-```
-
----
-
-# 2. Create Virtual Environment
-
-## Windows
-
-```bash
-python -m venv venv
-
-venv\\Scripts\\activate
-```
-
-## Linux/Mac
-
-```bash
-python3 -m venv venv
-
-source venv/bin/activate
-```
-
----
-
-# 3. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# 4. Configure Environment Variables
-
-Create `.env`
+Create a `.env` file in project root:
 
 ```env
-GROQ_API_KEY=your_groq_api_key
+# GROQ
+GROQ_API_KEY=YOUR_API_KEY
+GROQ_MODEL=openai/gpt-oss-120b
 
-DB_SERVER=localhost
-DB_NAME=EHS_DB
-DB_USER=ehs_user
-DB_PASSWORD=YourStrongPassword123
+# Backend
+BACKEND_HOST=0.0.0.0
+BACKEND_PORT=8000
+
+# CV
+YOLO_MODEL_SIZE=s
+CONFIDENCE_THRESHOLD=0.25
+PERSON_MODEL_PATH=./models/yolov8s.pt
+PPE_MODEL_PATH=./models/ppe_detection.pt
+
+# Database
+MSSQL_SERVER=sqlserver
+MSSQL_PORT=1433
+MSSQL_DATABASE=ehs_db
+MSSQL_USER=sa
+MSSQL_PASSWORD=EHS_Strong_Pass1!
+
+# Paths
+REPORTS_DIR=./reports
+KNOWLEDGE_BASE_DIR=./knowledge_base
+CHROMA_DB_DIR=./data/chroma_db
 ```
 
 ---
 
-# 5. Create SQL Server Database
+# Running with Docker
 
-```sql
-CREATE DATABASE EHS_DB;
-```
-
----
-
-# 6. Create Tables
+## Build Docker Images
 
 ```bash
-python create_tables.py
+docker compose build --no-cache
 ```
 
 ---
 
-# 7. Ingest EHS Documents
+## Start Containers
 
-Place PDF documents inside:
+```bash
+docker compose up --build
+```
+
+Or:
+
+```bash
+docker compose up -d
+```
+
+---
+
+# SQL Server Setup
+
+## SQL Server Instance
 
 ```text
-data/documents/
-```
-
-Then run:
-
-```bash
-python app/rag/ingest.py
+SQLEXPRESS
 ```
 
 ---
 
-# 8. Run FastAPI Backend
-
-```bash
-uvicorn app.api.main:app --reload
-```
-
-Backend runs at:
+## Windows Authentication Connection String
 
 ```text
-http://localhost:8000
+Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;
 ```
 
 ---
 
-# 9. Run Streamlit Frontend
+## SQL Login Credentials
 
-```bash
-streamlit run streamlit_app/app.py
+### SA User
+
+```text
+Username: sa
+Password: EHS_Strong_Pass1!
 ```
 
-Frontend runs at:
+### Custom User
+
+```text
+Username: ehs_user
+Password: StrongPass@123
+```
+
+---
+
+## Connect via SSMS / Azure Data Studio
+
+```text
+Server: localhost\SQLEXPRESS
+Authentication: SQL Login
+Username: sa
+Password: EHS_Strong_Pass1!
+```
+
+---
+
+# API Endpoints
+
+## Swagger Docs
+
+```text
+http://localhost:8000/docs
+```
+
+## Health Endpoint
+
+```text
+http://localhost:8000/health
+```
+
+## Frontend UI
 
 ```text
 http://localhost:8501
@@ -224,203 +209,137 @@ http://localhost:8501
 
 ---
 
-# Sample Workflow
+# API Examples
 
-## Step 1
-
-Upload safety image.
-
-## Step 2
-
-YOLOv8 detects:
-
-* person
-* helmet
-* vest
-
-## Step 3
-
-Violation extraction module evaluates:
-
-* missing helmet
-* missing vest
-
-## Step 4
-
-RAG retrieves relevant EHS policies.
-
-## Step 5
-
-Groq LLM reasons over:
-
-* detections
-* policies
-* safety context
-
-## Step 6
-
-Structured incident report generated.
-
-## Step 7
-
-Incident saved into Microsoft SQL Server.
-
----
-
-# API Endpoints
-
-## Root Endpoint
-
-```http
-GET /
-```
-
----
-
-## Analyze Image
-
-```http
-POST /analyze
-```
-
-### Input
-
-Image file
-
-### Output
-
-```json
-{
-  "detections": [],
-  "violations": [],
-  "policy_context": "",
-  "report": {}
-}
-```
-
----
-
-## Get Incidents
-
-```http
-GET /incidents
-```
-
-Returns all stored incidents.
-
----
-
-# Example Incident Report
-
-```json
-{
-  "incident_id": 12,
-  "timestamp": "2026-05-22 10:15:12",
-  "severity": "HIGH",
-  "reason": "Worker detected without helmet in restricted zone.",
-  "corrective_actions": [
-    "Stop worker entry",
-    "Provide safety helmet",
-    "Conduct PPE compliance training"
-  ]
-}
-```
-
----
-
-# Datasets Used
-
-## PPE Detection
-
-* Roboflow PPE Dataset
-* Hard Hat Workers Dataset
-* Construction Safety Dataset
-
-## Documents
-
-* OSHA Safety Manuals
-* Laboratory SOP PDFs
-* Industrial EHS Policies
-
----
-
-# Agentic Workflow
-
-The system uses modular agents:
-
-| Agent           | Responsibility            |
-| --------------- | ------------------------- |
-| Vision Agent    | Detect safety conditions  |
-| Retrieval Agent | Retrieve policy context   |
-| Reasoning Agent | Determine violations      |
-| Report Agent    | Generate incident reports |
-
----
-
-# Security Best Practices
-
-* Secrets stored in `.env`
-* `.env` excluded using `.gitignore`
-* Dedicated SQL Server user
-* Deterministic LLM outputs
-* Structured JSON responses
-
----
-
-# Docker Support
-
-## Build Image
+## Get All Reports
 
 ```bash
-docker build -t ehs-ai .
+curl http://localhost:8000/reports
 ```
 
-## Run Container
+## Filter Reports
 
 ```bash
-docker run -p 8000:8000 ehs-ai
+curl "http://localhost:8000/reports?severity=HIGH&limit=20"
 ```
 
 ---
 
-# Future Improvements
+# Health Endpoint Example
 
-* Real-time CCTV monitoring
-* Multi-camera support
-* DeepSORT tracking
-* Alerting system
-* Email/SMS notifications
-* Dashboard analytics
-* Azure deployment
-* LangGraph orchestration
-* PDF incident export
+```python
+@app.get("/health")
+async def health():
+    return {
+        "status": "healthy"
+    }
+```
 
----
 
-# Assumptions
+## Required Streamlit Binding
 
-* PPE dataset available
-* SQL Server installed locally
-* GPU optional but recommended
-* Documents provided in PDF format
+```bash
+streamlit run app.py --server.address=0.0.0.0 --server.port=8501
+```
 
 ---
 
-# Evaluation Goals Covered
+## Required Docker Port Mapping
 
- Computer Vision
- Agentic AI
- Multi-step workflow
- RAG implementation
- Structured outputs
- REST APIs
- Explainable reasoning
- Enterprise-grade storage
+```yaml
+ports:
+  - "8501:8501"
+```
 
 ---
 
-#  Author
+# Common Issues Faced
+
+## SQL Server Issues
+
+* Cannot open database `ehs_db`
+* SQL login failure
+* TCP/IP disabled
+* SQL Browser service disabled
+* Port 1433 blocked
+
+---
+
+## Docker Issues
+
+* Build cache issues
+* Persistent volume issues
+* WSL disk not shrinking
+* Port conflicts
+* Docker networking issues
+
+---
+
+## Backend Issues
+
+* FastAPI startup DB errors
+* Missing `/health` endpoint
+* ODBC Driver 18 missing
+* SQLAlchemy connection issues
+
+---
+
+## Frontend Issues
+
+* Streamlit unable to reach backend
+* API URL mismatch
+* CORS issues
+* External IP inaccessible
+
+---
+
+## Firewall / Network Issues
+
+Blocked Ports:
+
+* 8000
+* 8501
+* 1433
+
+Potential Issues:
+
+* Missing port forwarding
+* Windows Firewall rules
+* ISP/public IP restrictions
+
+---
+
+# Recommended Fresh Rebuild Flow
+
+```bash
+docker compose down -v
+docker system prune -a --volumes -f
+docker builder prune -a -f
+docker compose up --build
+```
+
+---
+
+# Backend Services
+
+The backend container runs:
+
+* FastAPI
+* SQLAlchemy
+* CV pipeline
+* Reasoning agent
+* Knowledge base
+
+---
+
+# Frontend Services
+
+The frontend container runs:
+
+* Streamlit dashboard UI
+
+---
+
+# Author
 
 Haseeb Khan
-
-```
