@@ -1,59 +1,30 @@
-# 🦺 EHS AI POC — Environment Health & Safety Monitoring
+# EHS AI POC : Environment Health & Safety Monitoring
 
 An end-to-end agentic AI system for industrial safety compliance monitoring using computer vision and LLM-powered reasoning.
 
 ---
 
-## 📐 Architecture Overview
+##  Architecture Overview
 
-```
-Image Input
-    │
-    ▼
-┌──────────────────┐     ┌────────────────────┐
-│  CV Module       │────▶│  Knowledge Base     │
-│  YOLOv8 Nano     │     │  ChromaDB + MiniLM  │
-│  + HSV Analysis  │     │  10 EHS Policies    │
-└──────────────────┘     └────────┬───────────┘
-                                  │
-                                  ▼
-                         ┌────────────────────┐
-                         │  Reasoning Agent   │
-                         │  Groq LLaMA 3.3 70B│
-                         └────────┬───────────┘
-                                  │
-                         ┌────────▼───────────┐
-                         │  FastAPI Backend   │
-                         │  REST API Server   │
-                         └────────┬───────────┘
-                                  │
-                         ┌────────▼───────────┐
-                         │  Streamlit UI      │
-                         └────────────────────┘
-```
-
-## 🗂️ Project Structure
+![Architecture Diagram](ehs_poc_architecture.jpg)
+## Project Structure
 
 ```
 ehs_poc/
 ├── backend/
+│   ├── knowledge_base/
 │   ├── main.py                 # FastAPI application & orchestration
-│   ├── cv_module.py            # Computer vision pipeline (YOLOv8 + HSV)
+│   ├── cv_module.py            # Computer vision pipeline (YOLOv8 +PPE Detection )
 │   ├── reasoning_agent.py      # Groq-powered agentic reasoning
 │   └── knowledge_base_module.py # ChromaDB RAG system
 ├── frontend/
 │   └── app.py                  # Streamlit web interface
-├── knowledge_base/
-│   └── ehs_policies.json       # 10 EHS policy documents
-├── data/
-│   └── chroma_db/              # Auto-created vector DB storage
-├── reports/                    # Auto-created incident reports (JSON)
 ├── requirements.txt
 ├── .env.example
 └── README.md
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Prerequisites
 - Python 3.9+
@@ -78,15 +49,14 @@ pip install -r requirements.txt
 ### 3. Configure Environment
 
 ```bash
-cp .env.example .env
 # Edit .env and add your GROQ_API_KEY
 ```
 
 `.env` file:
 ```
-GROQ_API_KEY=gsk_your_key_here
-GROQ_MODEL=llama-3.3-70b-versatile
-YOLO_MODEL_SIZE=n
+GROQ_API_KEY="gsk_your_key_here"
+GROQ_MODEL="model name"
+YOLO_MODEL_SIZE=n/s/m
 CONFIDENCE_THRESHOLD=0.45
 ```
 
@@ -114,17 +84,17 @@ streamlit run app.py
 
 ---
 
-## 🔌 API Endpoints
+## API Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/` | API info |
-| `GET` | `/health` | System health check |
-| `POST` | `/analyze/image` | Analyze base64 image |
-| `POST` | `/analyze/upload` | Upload image file |
-| `POST` | `/knowledge/query` | Query EHS policies |
+| `GET` | `/health`      | System health check |
+| `POST`| `/analyze/image`| Analyze base64 image |
+| `POST`| `/analyze/upload`| Upload image file |
+| `POST`| `/knowledge/query`| Query EHS policies |
 | `GET` | `/knowledge/categories` | List policy categories |
-| `GET` | `/reports` | List all reports |
+| `GET` | `/reports`     | List all reports |
 | `GET` | `/reports/{id}` | Get specific report |
 
 ### Example: Analyze an Image
@@ -161,7 +131,7 @@ curl -X POST "http://localhost:8000/knowledge/query" \
 
 ---
 
-## 📋 EHS Policies Included
+## EHS Policies Included
 
 | ID | Policy | Severity |
 |----|--------|----------|
@@ -178,7 +148,7 @@ curl -X POST "http://localhost:8000/knowledge/query" \
 
 ---
 
-## 📤 Sample Output
+## Sample Output
 
 ### Compliance Assessment
 ```json
@@ -218,29 +188,29 @@ curl -X POST "http://localhost:8000/knowledge/query" \
 
 ---
 
-## ⚙️ Design Decisions
+## Design Decisions
 
 | Aspect | Decision | Reason |
 |--------|----------|--------|
-| CV model | YOLOv8 Nano | Tiny (6MB), CPU-only, fast enough for laptops |
-| PPE detection | HSV color analysis | COCO-trained YOLO lacks PPE classes; color is effective & explainable |
+| CV model | YOLOv8 | Tiny (6MB), CPU-only, fast enough for laptops |
+| PPE detection | YoloV8 Based PPE KIT detection including 6 Classes
 | Embeddings | all-MiniLM-L6-v2 | 22MB, great quality, no API key, runs on CPU |
 | Vector DB | ChromaDB embedded | Zero-config, persistent, runs in-process |
-| LLM | Groq LLaMA 3.3 70B | Free tier, very fast, avoids hardcoded rules |
+| LLM | OPENAI/GPT-OSS-120B | Free tier, very fast, avoids hardcoded rules |
 | Reasoning temp | 0.1 | Deterministic, reproducible compliance outputs |
 | Report storage | JSON files | Simple, portable, audit trail |
 
-## ⚠️ Assumptions
+## Assumptions
 
 1. Images are representative of real-time video frames
-2. PPE compliance judged by color analysis (yellow/white = hard hat, high-vis = vest)
+2. PPE compliance judged by YoloV8 based custom model
 3. YOLO COCO classes used as proxy; production would use fine-tuned safety dataset
 4. Groq free tier sufficient for POC (rate limits apply)
 5. Single-location deployment assumed
 
 ---
 
-## 🔮 Production Extensions
+## Production Extensions
 
 - Fine-tune YOLOv8 on labeled safety dataset (hard hats, vests, goggles, gloves)
 - Add video stream support (RTSP camera feeds)
