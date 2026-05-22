@@ -1,4 +1,3 @@
-````markdown
 # 🦺 Agentic AI Powered Environment Health & Safety (EHS) Monitoring System
 
 An end-to-end Agentic AI based Environment Health & Safety (EHS) monitoring system integrating Computer Vision, RAG (Retrieval Augmented Generation), and LLM-based reasoning for automated safety compliance monitoring and incident generation.
