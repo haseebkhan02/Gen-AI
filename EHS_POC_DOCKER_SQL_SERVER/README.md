@@ -1,5 +1,3 @@
-# README.md
-
 ````markdown
 # 🦺 Agentic AI Powered Environment Health & Safety (EHS) Monitoring System
 
